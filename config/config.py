@@ -12,6 +12,9 @@ if platform.system() == "Windows":
 elif platform.system() == "Linux":
     CONFIG_DIR = config_dir = os.path.join(os.getenv("XDG_CONFIG_HOME", os.path.expanduser("~/.config")), APP_NAME)
 
+elif platform.system() == "Darwin":  # macOS
+    CONFIG_DIR = os.path.join(os.path.expanduser("~/Library/Application Support"), APP_NAME)
+
 CONFIG_FILE = os.path.join(CONFIG_DIR, "config.json")
 CONFIG_VERSION = 2
 
